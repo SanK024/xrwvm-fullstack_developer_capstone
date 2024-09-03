@@ -1,10 +1,12 @@
 name: 'Lint Code'
 
+
 on:
   push:
     branches: [master, main]
   pull_request:
     branches: [master, main]
+
 
 jobs:
   lint_python:
@@ -35,6 +37,7 @@ jobs:
         find . -name "*.py" -exec flake8 {} +
         echo "Linted all the py
         files successfully"
+
 
   lint_js:
       name: Lint JavaScript Files

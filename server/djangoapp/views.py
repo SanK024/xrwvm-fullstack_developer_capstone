@@ -53,7 +53,7 @@ def registration(request):
         username_exist = True
     except Exception as err:
         # If not, simply log this is a new user
-        err = ""
+        print(err)
         logger.debug("{} is new user".format(username))
     # If it is a new user
     if not username_exist:

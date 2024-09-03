@@ -15,7 +15,7 @@ from .restapis import get_request, analyze_review_sentiments, post_review
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
-# Create a `login_request` view to handle sign in request
+
 @csrf_exempt
 def login_user(request):
     # Get username and password from request.POST dictionary
@@ -37,7 +37,7 @@ def logout_request(request):
     data = {"userName": ""}
     return JsonResponse(data)
 
-# Create a `registration` view to handle sign up request
+
 @csrf_exempt
 def registration(request):
     data = json.loads(request.body)
@@ -73,7 +73,7 @@ def registration(request):
         data = {"userName":username,"error":"Already Registered"}
         return JsonResponse(data)
 
-#Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+
 def get_dealerships(request, state="All"):
     if(state == "All"):
         endpoint = "/fetchDealers"

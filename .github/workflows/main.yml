@@ -1,24 +1,27 @@
 name: 'Lint Code'
 
-on:
-  push:
+on: 
+
+  push: 
     branches: [master, main]
-  pull_request:
+  pull_request: 
     branches: [master, main]
 
+
 jobs:
-  lint_python:
+  lint_python: 
     name: Lint Python Files
     runs-on: ubuntu-latest
 
-    steps:
+
+    steps: 
 
     - name: Checkout Repository
       uses: actions/checkout@v3
     
     - name: Set up Python
       uses: actions/setup-python@v4
-      with:
+      with: 
         python-version: 3.12
 
     - name: Install dependencies
@@ -35,17 +38,17 @@ jobs:
         find . -name "*.py" -exec flake8 --max-line-length=79 {} + # Adjusting max line length
         echo "Linted all the Python files successfully"
 
-  lint_js:
+  lint_js: 
     name: Lint JavaScript Files
     runs-on: ubuntu-latest
 
-    steps:
+    steps: 
     - name: Checkout Repository
       uses: actions/checkout@v3
 
     - name: Install Node.js
       uses: actions/setup-node@v3
-      with:
+      with: 
         node-version: 14
 
     - name: Install JSHint

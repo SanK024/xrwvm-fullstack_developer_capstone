@@ -10,16 +10,16 @@ class CarMake(models.Model):
     description = models.TextField()
     
     def __str__(self):
-        return self.name 
+        return self.name
 
 
 class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     CAR_TYPES = [
-        ('SEDAN', 'Sedan'), 
-        ('SUV', 'SUV'), 
-        ('WAGON', 'Wagon'), 
+        ('SEDAN', 'Sedan'),
+        ('SUV', 'SUV'),
+        ('WAGON', 'Wagon'),
         # Add more choices as required
     ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
@@ -30,4 +30,4 @@ class CarModel(models.Model):
                                ])
     
     def __str__(self):
-        return self.name  
+        return self.name
